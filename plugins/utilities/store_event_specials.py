@@ -37,7 +37,20 @@ def add_special_characters(layout:
     special_characters = [
         'characters.bunny',
         'characters.taobaomascot',
-        'characters.santa'
+        'characters.santa',
+        'characters.actionhero',
+        'characters.jumpsuit',
+        'characters.assassin',
+        'characters.cowboy',
+        'characters.witch',
+        'characters.warrior',
+        'characters.superhero',
+        'characters.alien',
+        'characters.oldlady',
+        'characters.gladiator',
+        'characters.wrestler',
+        'characters.operasinger',
+        'characters.robot'
     ]
     for character in special_characters:
         if character not in layout['characters'][0]['items']:
