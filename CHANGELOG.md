@@ -1,6 +1,10 @@
 ## Plugin Manager (dd-mm-yyyy)
 
-### 1.0.7 (30-12.2023)
+### 1.0.8 (30-12-2023)
+
+- Fixed typo in changelog
+
+### 1.0.7 (30-12-2023)
 
 - Removed the typo
 
