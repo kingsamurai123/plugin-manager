@@ -1,5 +1,9 @@
 ## Plugin Manager (dd-mm-yyyy)
 
+### 1.0.9 (30-12-2023)
+
+- Added github release install in release yaml
+
 ### 1.0.8 (30-12-2023)
 
 - Fixed typo in changelog

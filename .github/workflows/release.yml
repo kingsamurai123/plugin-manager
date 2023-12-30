@@ -23,6 +23,11 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Install github-release
+      run: |
+        curl -sSL https://github.com/github-release/github-release/releases/download/v0.10.0/linux-amd64-github-release.tar.gz | sudo tar -xz -C /usr/local/bin/
+
+
     - name: Extract Version from Changelog
       id: extract_version
       run: echo "::set-output name=version::$(awk '/### \[Version\]/{print $3;exit}' CHANGELOG.md)"
