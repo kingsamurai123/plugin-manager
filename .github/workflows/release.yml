@@ -37,9 +37,13 @@ jobs:
     - name: Generate Release
       run: |
         version=${{ steps.extract_version.outputs.version }}
+    - name: Print Version
+      run: echo "Version is ${{ steps.extract_version.outputs.version }}"
+           echo "output ${{ steps.extract_version.outputs}}"
+
 
         # Create a release with the version
-        github-release release --tag $version --name "Release $version" 
+        github-release release --tag $version --name "Release $version"
 
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

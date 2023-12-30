@@ -8,6 +8,7 @@
 - final
 - removed description
 - last for the day added tag
+- VERSION
 
 ### 1.0.9 (30-12-2023)
 
