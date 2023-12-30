@@ -5,6 +5,7 @@
 - Modified source for release install
 - Testing
 - testing
+- final
 
 ### 1.0.9 (30-12-2023)
 
