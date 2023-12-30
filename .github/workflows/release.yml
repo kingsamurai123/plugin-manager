@@ -38,15 +38,11 @@ jobs:
       run: |
         version=${{ steps.extract_version.outputs.version }}
 
-        # Extract the changelog since the last release
-        changelog=$(sed -n -e "/### $version/,/${{ github.sha }}/p" CHANGELOG.md)
-
         # Create a release with the version
         github-release release \
           --repo ${{ github.repository }} \
           --tag $version \
-          --name "Release $version" \
-          --description "$changelog" 
+          --name "Release $version" 
 
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
