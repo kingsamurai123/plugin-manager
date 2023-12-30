@@ -32,7 +32,7 @@ jobs:
         version=${{ steps.extract_version.outputs.version }}
 
         # Extract the changelog since the last release
-        changelog=$(sed -n -e "/## \[Version\] $version/,/${{ github.sha }}/p" CHANGELOG.md)
+        changelog=$(sed -n -e "/### \[Version\] $version/,/${{ github.sha }}/p" CHANGELOG.md)
 
         # Create a release with the version
         github-release release \

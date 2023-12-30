@@ -3,7 +3,7 @@
 ### 1.0.7 (30-12.2023)
 
 - Removed the typo
-- 
+
 ### 1.0.6 (26-12-2023)
 
 - Fixed plugin manager throwing errors on older builds
