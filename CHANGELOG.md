@@ -7,6 +7,7 @@
 - testing
 - final
 - removed description
+- last for the day
 
 ### 1.0.9 (30-12-2023)
 
