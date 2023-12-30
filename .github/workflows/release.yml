@@ -1,21 +1,45 @@
-# Name of the workflow
-name: Release
+name: Automated Releases
 
-# Run on every commit tag which begins with "v" (e.g., "v0.1.4")
 on:
   push:
     branches:
       - testReleases
+    paths:
+      - 'CHANGELOG.md'
 
-
-# Automatically create a GitHub Release, with release details specified (the relevant commits)
 jobs:
   release:
-    name: "Release"
-    runs-on: "ubuntu-latest"
+    runs-on: ubuntu-latest
+
     steps:
-      - uses: "actions/create-release@v1"
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-        with:
-          release_name: "Release ${{ github.run_number}}"
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Extract Version from Changelog
+      id: extract_version
+      run: echo "::set-output name=version::$(awk '/## \[Version\]/{print $3;exit}' CHANGELOG.md)"
+
+    - name: Generate Release
+      run: |
+        version=${{ steps.extract_version.outputs.version }}
+
+        # Extract the changelog since the last release
+        changelog=$(sed -n -e "/## \[Version\] $version/,/${{ github.sha }}/p" CHANGELOG.md)
+
+        # Create a release with the version
+        github-release release \
+          --owner ${{ github.repository_owner }} \
+          --repo ${{ github.repository }} \
+          --tag $version \
+          --name "Release $version" \
+          --body "$changelog"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
