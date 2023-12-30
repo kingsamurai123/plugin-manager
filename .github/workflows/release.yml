@@ -32,15 +32,16 @@ jobs:
 
     - name: Extract Version from Changelog
       id: extract_version
-      run: echo "version=$(awk '/### /{print $2;exit}' CHANGELOG.md)" >> GITHUB_OUTPUT
+      run: echo "version::$(awk '/### /{print $2;exit}' CHANGELOG.md)" >> GITHUB_OUTPUT
 
     - name: Generate Release
       run: |
         version=${{ steps.extract_version.outputs.version }}
 
     - name: Print Version
-      run: echo "Version is ${{ steps.extract_version.outputs.version }}"
-           echo "output ${{ steps.extract_version.outputs}}"
+      run: | 
+        echo "Version is ${{ steps.extract_version.outputs.version }}"
+        echo "output ${{ steps.extract_version.outputs}}"
 
 
         # Create a release with the version
