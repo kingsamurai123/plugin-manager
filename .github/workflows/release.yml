@@ -16,6 +16,6 @@ jobs:
     steps:
       - uses: "actions/create-release@v1"
         env:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         with:
           release_name: "Release ${{ github.run_number}}"
