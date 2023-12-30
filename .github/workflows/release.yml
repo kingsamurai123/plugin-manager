@@ -25,8 +25,10 @@ jobs:
 
     - name: Install github-release
       run: |
-        curl -sSL https://github.com/github-release/github-release/releases/download/v0.10.0/linux-amd64-github-release.tar.gz | sudo tar -xz -C /usr/local/bin/
-
+        curl -sSL https://github.com/github-release/github-release/releases/download/v0.10.0/linux-amd64-github-release.bz2 -o github-release.bz2
+        bzip2 -d github-release.bz2
+        chmod +x github-release
+        sudo mv github-release /usr/local/bin/
 
     - name: Extract Version from Changelog
       id: extract_version
