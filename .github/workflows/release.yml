@@ -39,7 +39,7 @@ jobs:
         version=${{ steps.extract_version.outputs.version }}
 
         # Create a release with the version
-        github-release release --name "Release $version" 
+        github-release release --tag $version --name "Release $version" 
 
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
