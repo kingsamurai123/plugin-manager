@@ -6,8 +6,7 @@ on:
   push:
     branches:
       - testReleases
-    tags:
-      - "v*"
+
 
 # Automatically create a GitHub Release, with release details specified (the relevant commits)
 jobs:
