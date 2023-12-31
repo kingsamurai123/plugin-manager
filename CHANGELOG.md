@@ -2,7 +2,7 @@
 
 ### 1.0.9 (31-12-2023)
 
-- local github error
+- print version
 
 ### 1.0.8 (30-12-2023)
 

@@ -26,12 +26,17 @@ jobs:
         run: |
           echo "version=$(awk '/### /{print $2;exit}' CHANGELOG.md)" >> $GITHUB_ENV
 
+      - name: Print version
+        run: |
+          echo $version
+          echo "v$version"
 
-      - uses: "marvinpinto/action-automatic-releases@latest"
-        with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: false
-          files: |
-            plugin_manager.py
-          automatic_release_tag: "latest"
-          title: "V$version"
+#      - uses: "marvinpinto/action-automatic-releases@latest"
+#        with:
+#          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+#          title: "v$version"
+#          prerelease: false
+#          files: |
+#            plugin_manager.py
+#          automatic_release_tag: "latest"
+#
