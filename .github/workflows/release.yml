@@ -102,7 +102,7 @@ jobs:
 
     - name: Generate Release
     #Create a release with the version
-      run: github-release release --tag "V$version" --name "Release $version" --user ${{ github.repository_owner }}
+      run: github-release release --repo ${{ github.repository }} --tag "V$version" --name "Release $version" --user ${{ github.repository_owner }}
 
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
