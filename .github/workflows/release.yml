@@ -30,7 +30,10 @@ jobs:
 #        chmod +x github-release
 #        sudo mv github-release /usr/local/bin/
     - name: List files
-      run: ls
+      run: ls -l
+          pwd
+          ls -l ../
+          echo $GITHUB_WORKSPACE
 
     - name: Extract Version from Changelog
 #      id: extract_version
