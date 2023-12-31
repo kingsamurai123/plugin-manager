@@ -5,6 +5,7 @@
 - Added github release install in release yaml
 - final
 - removed extra run
+- removed path
 
 ### 1.0.8 (30-12-2023)
 
