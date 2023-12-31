@@ -2,9 +2,7 @@
 
 ### 1.0.9 (31-12-2023)
 
-- locally working
-- removed trailings
-- finally working
+- local github error
 
 ### 1.0.8 (30-12-2023)
 
