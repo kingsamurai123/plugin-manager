@@ -33,7 +33,9 @@ jobs:
     - name: Extract Version from Changelog
       id: extract_version
       env:
-        version: echo "$(awk '/### /{print $2;exit}' CHANGELOG.md)" #>> GITHUB_OUTPUT
+        version:
+          run:
+            echo "$(awk '/### /{print $2;exit}' CHANGELOG.md)" #>> GITHUB_OUTPUT
 
 #    - name: Generate Release
 #      run: |

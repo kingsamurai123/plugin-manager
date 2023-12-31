@@ -7,12 +7,6 @@
 - testing
 - final
 - removed description
-- last for the day added tag
-- VERSION
-- ver
-- v
-- test
-- test var
 
 ### 1.0.9 (30-12-2023)
 
