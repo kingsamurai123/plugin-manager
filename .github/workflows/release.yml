@@ -31,12 +31,12 @@ jobs:
           echo $version
           echo "v$version"
 
-#      - uses: "marvinpinto/action-automatic-releases@latest"
-#        with:
-#          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-#          title: "v$version"
-#          prerelease: false
-#          files: |
-#            plugin_manager.py
-#          automatic_release_tag: "latest"
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          title: "v$version"
+          prerelease: false
+          files: |
+            plugin_manager.py
+          automatic_release_tag: "latest"
 #
