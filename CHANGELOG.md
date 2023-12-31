@@ -2,14 +2,7 @@
 
 ### 1.0.9 (31-12-2023)
 
-- Added github release install in release yaml
-- final
-- removed extra run
-- removed path
-- print ls
-- print more ls
-- more pwd
-- add github workspace
+-locally working
 
 ### 1.0.8 (30-12-2023)
 
