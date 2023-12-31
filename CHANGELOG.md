@@ -1,5 +1,9 @@
 ## Plugin Manager (dd-mm-yyyy)
 
+### 1.0.10 (31-12-2023)
+
+- Testing further
+
 ### 1.0.9 (31-12-2023)
 
 - working
