@@ -1,10 +1,6 @@
 ## Plugin Manager (dd-mm-yyyy)
 
-### 1.0.10 (30-12-2023)
-
-- Modified source for release install
-
-### 1.0.9 (30-12-2023)
+### 1.0.9 (31-12-2023)
 
 - Added github release install in release yaml
 
