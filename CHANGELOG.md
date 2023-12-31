@@ -4,6 +4,7 @@
 
 - locally working
 - removed trailings
+- finally working
 
 ### 1.0.8 (30-12-2023)
 
