@@ -3,6 +3,7 @@
 ### 1.0.9 (31-12-2023)
 
 - Added github release install in release yaml
+- final
 
 ### 1.0.8 (30-12-2023)
 
