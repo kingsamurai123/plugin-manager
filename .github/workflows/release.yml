@@ -22,14 +22,18 @@ jobs:
         run: |
           echo "done!"
 
-      - name: Extract Version from Changelog
-        run: |
-          echo "version=$(awk '/### /{print $2;exit}' CHANGELOG.md)" >> $GITHUB_ENV
+#      - name: Extract Version from Changelog
+#        run: |
+#          echo "version=$(awk '/### /{print $2;exit}' CHANGELOG.md)" >> $GITHUB_ENV
+      - name: Set Version
+        id: set_version
+        run: echo "::set-output name=version::$(awk '/### /{print $2;exit}' CHANGELOG.md)"
 
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - name: create release
+        uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          title: "${{ version}}"
+          title: "${{ steps.set_version.outputs.version }}"
           automatic_release_tag: ""
           prerelease: false
           files: |
