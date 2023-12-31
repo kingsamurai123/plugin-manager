@@ -29,6 +29,8 @@ jobs:
 #        bzip2 -d github-release.bz2
 #        chmod +x github-release
 #        sudo mv github-release /usr/local/bin/
+    - name: List files
+      run: ls
 
     - name: Extract Version from Changelog
 #      id: extract_version
