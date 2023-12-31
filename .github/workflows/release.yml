@@ -36,8 +36,8 @@ jobs:
 
 
     - name: Generate Release
-      run: |
-        version=${{ steps.extract_version.outputs.version }}
+#      run: |
+#        version=${{ steps.extract_version.outputs.version }}
 
     - name: Print Version
       run: | 
