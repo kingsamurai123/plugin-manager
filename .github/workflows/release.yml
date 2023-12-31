@@ -33,11 +33,10 @@ jobs:
     - name: Extract Version from Changelog
       id: extract_version
       env:
-        version:
-          run:
-            echo "$(awk '/### /{print $2;exit}' CHANGELOG.md)" #>> GITHUB_OUTPUT
+        run: echo "VERSION=$(awk '/### /{print $2;exit}' CHANGELOG.md)" >> $GITHUB_ENV
 
-#    - name: Generate Release
+
+      #    - name: Generate Release
 #      run: |
 #        version=${{ steps.extract_version.outputs.version }}
 
