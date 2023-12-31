@@ -8,6 +8,7 @@
 - removed path
 - print ls
 - print more ls
+- more pwd
 
 ### 1.0.8 (30-12-2023)
 
