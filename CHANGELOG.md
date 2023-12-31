@@ -1,5 +1,9 @@
 ## Plugin Manager (dd-mm-yyyy)
 
+### 1.0.11 (31-12-2023)
+
+- changed the tags
+
 ### 1.0.10 (31-12-2023)
 
 - Testing further
