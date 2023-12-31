@@ -12,27 +12,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '14'
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Install github-release
-      run: |
-        curl -sSL https://github.com/github-release/github-release/releases/download/v0.10.0/linux-amd64-github-release.bz2 -o github-release.bz2
-        bzip2 -d github-release.bz2
-        chmod +x github-release
-        sudo mv github-release /usr/local/bin/
+#    - name: Checkout repository
+#      uses: actions/checkout@v2
+#
+#    - name: Set up Node.js
+#      uses: actions/setup-node@v3
+#      with:
+#        node-version: '14'
+#
+#    - name: Install dependencies
+#      run: npm install
+#
+#    - name: Install github-release
+#      run: |
+#        curl -sSL https://github.com/github-release/github-release/releases/download/v0.10.0/linux-amd64-github-release.bz2 -o github-release.bz2
+#        bzip2 -d github-release.bz2
+#        chmod +x github-release
+#        sudo mv github-release /usr/local/bin/
 
     - name: Extract Version from Changelog
-      id: extract_version
-      run: echo "VERSION=$(awk '/### /{print $2;exit}' ../../CHANGELOG.md)" >> $GITHUB_ENV
+#      id: extract_version
+      run: echo "version=$(awk '/### /{print $2;exit}' ../../CHANGELOG.md)" >> $GITHUB_ENV
 
 
 #      run: |
@@ -40,14 +40,15 @@ jobs:
 
     - name: Print Version
       run: | 
-        echo "Version is ${{ steps.extract_version.outputs.version }}"
-        echo "output ${{ steps.extract_version.outputs}}"
         echo "Version var: $version"
 
-    - name: Generate Release
-      #Create a release with the version
-      run:
-        github-release release --tag "Latest" --name "Release $version"
+#        echo "Version is ${{ steps.extract_version.outputs.version }}"
+#        echo "output ${{ steps.extract_version.outputs}}"
+
+#    - name: Generate Release
+#      #Create a release with the version
+#      run:
+#        github-release release --tag "Latest" --name "Release $version"
 
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
