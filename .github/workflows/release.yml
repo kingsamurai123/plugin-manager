@@ -35,7 +35,6 @@ jobs:
       run: echo "VERSION=$(awk '/### /{print $2;exit}' ../../CHANGELOG.md)" >> $GITHUB_ENV
 
 
-    - name: Generate Release
 #      run: |
 #        version=${{ steps.extract_version.outputs.version }}
 
@@ -45,8 +44,9 @@ jobs:
         echo "output ${{ steps.extract_version.outputs}}"
         echo "Version var: $version"
 
-
+    - name: Generate Release
       #Create a release with the version
+      run:
         github-release release --tag "Latest" --name "Release $version"
 
       env:

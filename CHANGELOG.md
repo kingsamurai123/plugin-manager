@@ -5,6 +5,7 @@
 - Added github release install in release yaml
 - final
 - removed extra run
+- fix issues
 
 ### 1.0.8 (30-12-2023)
 
