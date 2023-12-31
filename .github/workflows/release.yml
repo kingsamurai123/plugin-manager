@@ -29,16 +29,17 @@ jobs:
 #        bzip2 -d github-release.bz2
 #        chmod +x github-release
 #        sudo mv github-release /usr/local/bin/
-    - name: List files
+    - name: PWD files
       run: |
-          ls -l
           pwd
-          ls -l ../
-          ls $GITHUB_WORKSPACE
+
+    - name: List
+      run: |
+          ls
 
     - name: Extract Version from Changelog
 #      id: extract_version
-      run: echo "version=$(awk '/### /{print $2;exit}' CHANGELOG.md)" >> $GITHUB_ENV
+      run: echo "version=$(awk '/### /{print $2;exit}' $GITHUB_WORKSPACE/CHANGELOG.md)" >> $GITHUB_ENV
 
 
 #      run: |

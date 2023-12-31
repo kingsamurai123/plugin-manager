@@ -9,6 +9,7 @@
 - print ls
 - print more ls
 - more pwd
+- add github workspace
 
 ### 1.0.8 (30-12-2023)
 
